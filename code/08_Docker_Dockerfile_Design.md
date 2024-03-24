@@ -87,6 +87,27 @@ We will keep it simple by relying the Docker container on Raspberry Pi Level onl
 |                  | and power consumption     | and power consumption     |
 
 One last thing we can do with Visual Code is an interacive mode inside EV3 brick itself like below.</br>
+```txt
+from pybricks.hubs import EV3Brick
+from pybricks.ev3devices import Motor
+from pybricks.parameters import Port
+
+# Initialize the EV3 brick
+ev3 = EV3Brick()
+
+# Initialize a motor on port B
+motor = Motor(Port.B)
+
+# Move the motor forward at 50% speed for 2 seconds
+motor.run(500)
+
+# Wait for 2 seconds
+ev3.speaker.beep()
+ev3.speaker.beep()
+
+# Stop the motor
+motor.stop()
+```
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image10.png) 
 </br>
 
