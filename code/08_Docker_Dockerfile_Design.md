@@ -108,7 +108,7 @@ ev3.speaker.beep()
 # Stop the motor
 motor.stop()
 ```
-![](https://github.com/FariusGitHub/temp/blob/main/image/image10.png) 
+![](https://github.com/FariusGitHub/temp/blob/main/image/image10b.png) 
 </br>
 
 Next, we will start to write Dockerfile below, please note that we need to do the following: </br>
