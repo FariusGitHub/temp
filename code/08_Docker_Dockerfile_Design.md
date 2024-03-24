@@ -42,3 +42,4 @@ robot@ev3dev:~$ cat curve1/main.py
   # Play another beep sound.
   ev3.speaker.beep(-5.529*100, 100)
 ```
+[the plan](https://github.com/FariusGitHub/temp/blob/main/image/image8.png)
