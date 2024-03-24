@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ev3-peach
+  template:
+    metadata:
+      labels:
+        app: ev3-peach
+    spec:
+      containers:
+      - name: httpd
+        image: httpd
+      - name: ev3
+        image: ftjioesman/ev3
