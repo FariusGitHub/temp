@@ -1,7 +1,9 @@
 # LINUX OS
-## Sample of Master node to make new
-## folder on worker node through ssh
+## Sample of Master node to make new folder on worker node through ssh
 
+Below is a master node 192.168.68.116 that will aim to reach Raspberry Pi
+
+```sh
 $ ip addr show
 	1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
 	    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -27,19 +29,34 @@ $ ip addr show
 	    link/ether 02:42:67:31:ea:47 brd ff:ff:ff:ff:ff:ff
 	    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
 	       valid_lft forever preferred_lft forever
-
+```
+As soon as Master Node tried to ping we will get below 
+```txt
 $ ping 192.168.68.121
 	PING 192.168.68.121 (192.168.68.121) 56(84) bytes of data.
 	64 bytes from 192.168.68.121: icmp_seq=1 ttl=64 time=85.8 ms
 	64 bytes from 192.168.68.121: icmp_seq=2 ttl=64 time=8.91 ms
 	64 bytes from 192.168.68.121: icmp_seq=3 ttl=64 time=10.4 ms
+```
+The ping will stop as purposely stop the access from Raspberry Pi to mimic the down time.
+```txt
+$ sudo iptables -A INPUT -s 192.168.68.116 -p icmp --icmp-type echo-request -j DROP
+```
+It will start pinging again as I enable it like below to mimic the resolved down time.
+```txt
+$ sudo iptables -D INPUT -s 192.168.68.116 -p icmp --icmp-type echo-request -j DROP
+```
+...like below
+```txt
 	64 bytes from 192.168.68.121: icmp_seq=4 ttl=64 time=9.25 ms
 	64 bytes from 192.168.68.121: icmp_seq=5 ttl=64 time=8.75 ms
 	64 bytes from 192.168.68.121: icmp_seq=6 ttl=64 time=8.58 ms
 	64 bytes from 192.168.68.121: icmp_seq=7 ttl=64 time=10.9 ms
 	64 bytes from 192.168.68.121: icmp_seq=8 ttl=64 time=14.9 ms
 	64 bytes from 192.168.68.121: icmp_seq=9 ttl=64 time=8.06 ms
-
+```
+Ultimately the master node can control Raspberry Pi. Below example is to make a new folder
+```txt
 $ ssh atjioesman@192.168.68.121 mkdir -p /home/atjioesman/test
 	The authenticity of host '192.168.68.121 (192.168.68.121)' can't be established.
 	ECDSA key fingerprint is SHA256:lNhIcdbqErBh8DG4v2mzLJqv/S1i8QHz4AFhsoulm5g.
@@ -49,3 +66,4 @@ $ ssh atjioesman@192.168.68.121 mkdir -p /home/atjioesman/test
 
 $ ssh atjioesman@192.168.68.121 mkdir -p /home/atjioesman/test3
 	atjioesman@192.168.68.121's password: 
+```
