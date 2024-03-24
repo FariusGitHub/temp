@@ -69,9 +69,10 @@ The python file was automatically uploaded to EV3 bricks which also run some sor
 when Visual Code debug the python file. The python project shall be created through Visual Code</br>
 extension LEGOⓇ MINDSTORMSⓇ EV3 MicroPython like below.
 
-![](https://github.com/FariusGitHub/temp/blob/main/image/image9.png)
+![](https://github.com/FariusGitHub/temp/blob/main/image/image9.png) </br>
 
-The architecture of EV3 brick Linux OS was limited although we could create sort of [Docker-in-Docker](https://github.com/FariusGitHub/Example_Webpage).
+The architecture of EV3 brick Linux OS was limited although we could create sort of [Docker-in-Docker](https://github.com/FariusGitHub/Example_Webpage).</br>
+We will keep it simple by relying the Docker container on Raspberry Pi Level only and not in EV3 robot.
 | Feature          | x86_64                    | armv5tejl                 |
 |------------------|---------------------------|---------------------------|
 | Instruction Set  | x86_64                    | ARMv5TEJL                 |
@@ -84,6 +85,10 @@ The architecture of EV3 brick Linux OS was limited although we could create sort
 |                  | FMA, etc.                 | DSP, VFP, NEON, TrustZone |
 | Performance      | Higher performance        | Lower performance         |
 |                  | and power consumption     | and power consumption     |
+
+One last thing we can do with Visual Code is an interacive mode inside EV3 brick itself like below.</br>
+![](https://github.com/FariusGitHub/temp/blob/main/image/image10.png) 
+</br>
 
 Next, we will start to write Dockerfile below, please note that we need to do the following: </br>
 - ssh robot@10.42.0.3
