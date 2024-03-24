@@ -64,3 +64,23 @@ robot@ev3dev:~$ cat curve2/main.py
   ev3.speaker.beep(-5.529*100, 100)
 ```
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image8.png)
+
+The python file was automatically uploaded to EV3 bricks which also run some sort of Linux OS</br>
+when Visual Code debug the python file. The python project shall be created through Visual Code</br>
+extension LEGOⓇ MINDSTORMSⓇ EV3 MicroPython like below.
+
+![](https://github.com/FariusGitHub/temp/blob/main/image/image9.png)
+
+The architecture of EV3 brick Linux OS was limited although we could create sort of [Docker-in-Docker](https://github.com/FariusGitHub/Example_Webpage).
+| Feature          | x86_64                    | armv5tejl                 |
+|------------------|---------------------------|---------------------------|
+| Instruction Set  | x86_64                    | ARMv5TEJL                 |
+| Endianness       | Little Endian             | Little Endian             |
+| Registers        | 16 general purpose        | 15 general purpose        |
+|                  | registers                 | registers                 |
+| Addressing Modes | Multiple                  | Limited                   |
+| Memory           | 64-bit                    | 32-bit                    |
+| Extensions       | SSE, AVX, AES-NI,         | SIMD, Thumb, Jazelle,     |
+|                  | FMA, etc.                 | DSP, VFP, NEON, TrustZone |
+| Performance      | Higher performance        | Lower performance         |
+|                  | and power consumption     | and power consumption     |
