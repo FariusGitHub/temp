@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+
+    environment {
+        VIRTUALENV = 'venv'
+    }
+    
+        stage('Test') {
+            when {
+                expression {
+                    return env.BRANCH_NAME == 'develop' || 'main';
+                }
+            }
+            steps {
+                echo 'In ' + env.BRANCH_NAME + ' branch, testing..'
+                script {
+                    // Run your test command
+                    sh '''
+                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve1\" \"/home/robot/curve1/main.py\""
+                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve2\" \"/home/robot/curve2/main.py\""
+                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve3\" \"/home/robot/curve3/main.py\""
+                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve4\" \"/home/robot/curve4/main.py\""
+                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve5\" \"/home/robot/curve5/main.py\""
+                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve6\" \"/home/robot/curve6/main.py\""
+                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve7\" \"/home/robot/curve7/main.py\""
+                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve8\" \"/home/robot/curve8/main.py\""
+                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve9\" \"/home/robot/curve9/main.py\""
+                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve10\" \"/home/robot/curve10/main.py\""
+                    '''
+                }                
+            }
+        }
+
+        stage('Build'){
+
+            environment {
+                DOCKER_CRED = credentials('Farius-DockerHub')
+                }
+            
+            steps{
+                echo 'Building'
+                sh '''
+                    . ${VIRTUALENV}/bin/activate
+                    docker login --username ${DOCKER_CRED_USR} --password ${DOCKER_CRED_PSW}
+                    docker build -t ${DOCKER_CRED_USR}/webpage:latest -f Dockerfile .
+                    docker push ${DOCKER_CRED_USR}/webpage:latest
+                '''
+            }
+        }
+        
+
+    
+    }
+
+}
