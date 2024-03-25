@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build('ev3:latest')
+                }
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    docker.image('ev3:latest').run('-p 8080:8080')
+                }
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    docker.withRegistry('https://dockerhub.com', 'dockerhub_credentials') {
+                        docker.image('ev3:latest').push('latest')
+                    }
+                }
+            }
+        }
+    }
+}
