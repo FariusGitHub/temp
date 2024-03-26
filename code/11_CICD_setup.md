@@ -27,7 +27,7 @@ $ docker ps -a
 CONTAINER ID   IMAGE                 COMMAND                  CREATED         STATUS         PORTS                                              NAMES
   ceb8ac595bdf   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   4 minutes ago   Up 4 minutes   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   angry_goldwasser
 
-$ docker exec -it ceb8ac595bdf /bin/bash
+$ docker exec -u 0 -it ceb8ac595bdf /bin/bash
 jenkins@ceb8ac595bdf:/$ cat /var/jenkins_home/secrets/initialAdminPassword
   d96fXXXXXXXXXXXXXXXXXXXXXXXXXb5c
 ```
