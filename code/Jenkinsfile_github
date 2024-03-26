@@ -9,7 +9,7 @@ pipeline {
                 git clone https://github.com/FariusGitHub/produce.git
                 cd produce
 
-                echo -e "FROM ubuntu:latest\n\
+                echo "FROM ubuntu:latest\n\
                 RUN apt-get update && apt-get install -y openssh-client sshpass\n\
                 CMD ["sshpass", "-p", "maker", "ssh", "-o", "StrictHostKeyChecking=no", "robot@10.42.0.3",\n\
                 "brickrun", "-r", "--directory=/home/robot/curve1", "/home/robot/curve1/main.py"\n\
