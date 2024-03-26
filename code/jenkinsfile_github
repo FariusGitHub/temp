@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                sh """
+                rm -rf produce
+                git clone https://github.com/FariusGitHub/produce.git
+                cd produce
+
+                echo -e "FROM ubuntu:latest\n\
+                RUN apt-get update && apt-get install -y openssh-client sshpass\n\
+                CMD ["sshpass", "-p", "maker", "ssh", "-o", "StrictHostKeyChecking=no", "robot@10.42.0.3",\n\
+                "brickrun", "-r", "--directory=/home/robot/curve1", "/home/robot/curve1/main.py"\n\
+                "brickrun", "-r", "--directory=/home/robot/curve2", "/home/robot/curve2/main.py"\n\
+                "brickrun", "-r", "--directory=/home/robot/curve3", "/home/robot/curve3/main.py"\n\
+                ]" > Dockerfile
+
+                cat Dockerfile
+                git add .
+                git config --global user.email "ftjioesman@hotmail.com"
+                git config --global user.name "farius"
+                git commit -m 'test'
+                git remote set-url origin https://ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXUTF@github.com/FariusGitHub/produce
+                git push origin main
+                """
+            }
+        }
+    }
+}
