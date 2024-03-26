@@ -66,3 +66,7 @@ apt-get install -y docker.io
 ```
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image20.png)
 
+## DOCKER IN DOCKER AND WEBHOOKS
+Above article elaborated nicely the necessity tricks to mount host docker into Jenkins container.</br>
+Moreoverthe webhooks from GitHub make it possible to trigger Jenkins CI/CD when any changes made.
+
