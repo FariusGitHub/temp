@@ -50,6 +50,12 @@ The first java command is simply creating a new freestyle project named project6
 ## AUTOMATE JENKINS PROJECT BUILD
 And the second java command is simply building above project
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image17b.png)
+Please note that sspass command would need to be preinstall first in the associated container.</br>
+It would be much easier to run this on the terminal rather than dumping it into the groovy sntax.
+```txt
+apt update
+apt install sshpass
+```
 </br></br>
 
 ## THE TERRAFORM COMMANDS
