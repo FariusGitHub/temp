@@ -1,4 +1,5 @@
 # Console Output
+```txt
 Started by user admin
 [Pipeline] Start of Pipeline
 [Pipeline] node
@@ -112,3 +113,4 @@ Warning: Permanently added '10.42.0.3' (ED25519) to the list of known hosts.
 [Pipeline] // node
 [Pipeline] End of Pipeline
 Finished: SUCCESS
+```
