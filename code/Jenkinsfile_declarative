@@ -1,51 +1,46 @@
 pipeline {
     agent any
-        stage('Test') {
-            when {
-                expression {
-                    return env.BRANCH_NAME == 'develop' || 'main';
-                }
-            }
+
+    stages {
+        stage('Review') {
             steps {
-                echo 'In ' + env.BRANCH_NAME + ' branch, testing..'
                 script {
-                    // Run your test command
-                    sh '''
-                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve1\" \"/home/robot/curve1/main.py\""
-                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve2\" \"/home/robot/curve2/main.py\""
-                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve3\" \"/home/robot/curve3/main.py\""
-                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve4\" \"/home/robot/curve4/main.py\""
-                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve5\" \"/home/robot/curve5/main.py\""
-                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve6\" \"/home/robot/curve6/main.py\""
-                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve7\" \"/home/robot/curve7/main.py\""
-                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve8\" \"/home/robot/curve8/main.py\""
-                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve9\" \"/home/robot/curve9/main.py\""
-                        sshpass -p 'maker' ssh robot@10.42.0.3 "brickrun -r --directory=\"/home/robot/curve10\" \"/home/robot/curve10/main.py\""
-                    '''
-                }                
-            }
-        }
-
-        stage('Build'){
-
-            environment {
-                DOCKER_CRED = credentials('Farius-DockerHub')
-                }
-            
-            steps{
-                    script {
-                        echo 'Building'
-                        docker.withRegistry('https://index.docker.io/v1/', \
-                        "${DOCKER_CRED_USR}", "${DOCKER_CRED_PSW}") {
-                            docker.build("${DOCKER_CRED_USR}/ev3:latest", "-f Dockerfile .")
-                            docker.image("${DOCKER_CRED_USR}/ev3:latest").push()
-                        }
+                    docker.image('alpine').inside {
+                        sh 'cat Dockerfile'
                     }
                 }
+            }
         }
-        
 
-    
+        stage('Build') {
+            steps {
+                script {
+                    docker.image('docker').inside {
+                        sh 'docker build -t ftjioesman/capstone .'
+                    }
+                }
+            }
+        }
+
+        stage('Push') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_credentials') {
+                        docker.image('ftjioesman/capstone').push('latest')
+                    }
+                }
+            }
+        }
+
+        stage('Pull') {
+            steps {
+                script {
+                    docker.image('ftjioesman/capstone').pull()
+                    docker.image('ftjioesman/capstone').inside {
+                        sh 'docker run ftjioesman/capstone'
+                    }
+                }
+            }
+        }
     }
-
 }
