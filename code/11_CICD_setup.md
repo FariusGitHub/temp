@@ -25,9 +25,9 @@ $ docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home://var/jenkins_home j
 
 $ docker ps -a
 CONTAINER ID   IMAGE                 COMMAND                  CREATED         STATUS         PORTS                                              NAMES
-  ceb8ac595bdf   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   4 minutes ago   Up 4 minutes   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   angry_goldwasser
+  54ed18a5d8a1   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   4 minutes ago   Up 4 minutes   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   angry_goldwasser
 
-$ docker exec -u 0 -it ceb8ac595bdf /bin/bash
+$ docker exec -u 0 -it 54ed18a5d8a1 /bin/bash
 jenkins@ceb8ac595bdf:/$ cat /var/jenkins_home/secrets/initialAdminPassword
   d96fXXXXXXXXXXXXXXXXXXXXXXXXXb5c
 ```
@@ -36,3 +36,33 @@ Remember that /var/jenkins_home/secrets/initialAdminPassword is only accessible 
 When we go to localhost:8080, we shall enter above password as an admin user. And I will leave the same going forward.
 
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image18.png)
+
+Remember to go inside the container as root (-u 0) so you can install update and run as sudo easily. </br>
+Since we setup above jenkins inside Docker container, we may install a lightweight docker inside docker. </br>
+We would notice that the same goovy command below will make a different.
+```txt
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                sh"""
+                
+                docker login --username ftjioesman --password XXXXXXX
+                
+                """
+            }
+        }
+    }
+}
+```
+Before we install docker inside a docker would see this
+![](https://github.com/FariusGitHub/temp/blob/main/image/image19.png)
+After we install docker insider container 54ed18a5d8a1 as follow, we would see below
+```txt
+apt-get update
+apt-get install -y docker.io
+```
+![](https://github.com/FariusGitHub/temp/blob/main/image/image20.png)
+
