@@ -1,4 +1,4 @@
-Below are not a jenkinsfile, but simply it shows a leverage needed to consider outside a jenkinsfile.
+Below is not a jenkinsfile, but simply it shows a leverage needed to consider outside a jenkinsfile.
 Unlike Jenkinsfile that only calls python code on the EV3 bricks, it has no control on what inside it. 
 Below are the example of python codes with an interactive mode to tweak the robot outside Jenkinsfile.
 
