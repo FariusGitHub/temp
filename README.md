@@ -1,4 +1,4 @@
-# Thank you Nhat, Usman and thank you Dawei.
+# Thank you Nhat, Usman, Dawei.
 https://github.com/FariusGitHub/temp
 
 Herewith is the youtube about DevOps & Produce </br>
