@@ -11,7 +11,7 @@ Use Ctrl-D to exit, Ctrl-E for paste mode
 >>> Motor(Port.B).run_target(1000, 100)
 >>> EV3Brick().speaker.beep(100,100)
 ```
-[![Play Button](https://drive.google.com/file/d/1eeN6F5NzGrVoI5H6viZYJt6AiuZHUE5f/view?usp=drive_link)
+[![Play Button](https://img.icons8.com/material-outlined/24/000000/play--v1.png)](https://drive.google.com/file/d/1eeN6F5NzGrVoI5H6viZYJt6AiuZHUE5f/view?usp=drive_link)
 
 ```txt
 Pybricks MicroPython v1.11 2020-05-06; linux version
@@ -22,4 +22,4 @@ Use Ctrl-D to exit, Ctrl-E for paste mode
 >>> Motor(Port.B).run_target(1000, 100)
 >>> EV3Brick().speaker.beep(500,100)
 ```
-[![Play Button](https://drive.google.com/file/d/1-Ypu--c1ilZQ7s3gwirj3pHg_UNMvoLA/view?usp=drive_link)
+[![Play Button](https://img.icons8.com/material-outlined/24/000000/play--v1.png)](https://drive.google.com/file/d/1-Ypu--c1ilZQ7s3gwirj3pHg_UNMvoLA/view?usp=drive_link)
