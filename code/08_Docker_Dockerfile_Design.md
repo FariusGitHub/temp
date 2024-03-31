@@ -73,19 +73,16 @@ extension LEGOⓇ MINDSTORMSⓇ EV3 MicroPython like below.
 
 The architecture of EV3 brick Linux OS was limited although we could create sort of [Docker-in-Docker](https://github.com/FariusGitHub/Example_Webpage).</br>
 We will keep it simple by relying the Docker container on Raspberry Pi Level only and not in EV3 robot.
-| Feature          | x86_64                    | armv5tejl                 |
-|------------------|---------------------------|---------------------------|
-| Instruction Set  | x86_64                    | ARMv5TEJL                 |
-| Endianness       | Little Endian             | Little Endian             |
-| Registers        | 16 general purpose        | 15 general purpose        |
-|                  | registers                 | registers                 |
-| Addressing Modes | Multiple                  | Limited                   |
-| Memory           | 64-bit                    | 32-bit                    |
-| Extensions       | SSE, AVX, AES-NI,         | SIMD, Thumb, Jazelle,     |
-|                  | FMA, etc.                 | DSP, VFP, NEON, TrustZone |
-| Performance      | Higher performance        | Lower performance         |
-|                  | and power consumption     | and power consumption     |
-
+| Feature          | x86_64                                   | armv5tejl                               |
+|------------------|------------------------------------------|-----------------------------------------|
+| Instruction Set  | x86_64                                   | ARMv5TEJL                               |
+| Endianness       | Little Endian                            | Little Endian                           |
+| Registers        | 16 general purpose registers             | 15 general purpose registers            |
+| Addressing Modes | Multiple                                 | Limited                                 |
+| Memory           | 64-bit                                   | 32-bit                                  |
+| Extensions       | SSE, AVX, AES-NI,                        | SIMD, Thumb, Jazelle,                   |
+|                  | FMA, etc.                                | DSP, VFP, NEON, TrustZone               |
+| Performance      | Higher performance and power consumption | Lower performance and power consumption |
 One last thing we can do with Visual Code is an interacive mode inside EV3 brick itself like below.</br>
 ```txt
 from pybricks.hubs import EV3Brick
