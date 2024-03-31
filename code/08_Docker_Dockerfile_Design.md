@@ -83,7 +83,9 @@ We will keep it simple by relying the Docker container on Raspberry Pi Level onl
 | Extensions       | SSE, AVX, AES-NI,                        | SIMD, Thumb, Jazelle,                   |
 |                  | FMA, etc.                                | DSP, VFP, NEON, TrustZone               |
 | Performance      | Higher performance and power consumption | Lower performance and power consumption |
-One last thing we can do with Visual Code is an interacive mode inside EV3 brick itself like below.</br>
+
+</br>One last thing we can do with Visual Code is an interacive mode inside EV3 brick itself like below.</br>
+
 ```txt
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor
