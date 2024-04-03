@@ -44,7 +44,7 @@ We will dive deeper into observability towards the end of this blog.</br></br>
 
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image33.png)</br>
 The next section of this blog will cover the heart of the DevOps principles itself, Container Technology. </br>
-In short, many will think DevOps is identical to Docker and Kubernetes as container and container orchestration. </br>
+In short, many will think DevOps is identical to [Docker](https://medium.com/p/3fff23c4844c/edit) and [Kubernetes](https://github.com/FariusGitHub/kubernetes) as container and container orchestration. </br>
 However, there are also a few choices from simple Docker swarm to large-scale Kubernetes clusters offered by major cloud players like AWS EKS, Google Kubernetes Engine, or Azure Kubernetes Service. </br>
 As you can see in the chart, it reflects more on the business objectives and values rather than going deeper into technicality. </br>
 A DevOps expert could be expected to know many things but should not be an expert in everything. </br>
@@ -106,7 +106,7 @@ As we covered a bit about observability in the beginning of this blog, here is h
 
 ## SUMMARY
 This blog cover an application of Raspberry Pi and DevOps application, </br>
-It is actually more than AWS, Kubernetes, Docker, Produce, Robotic, IoT. </br>
+It is actually more than [AWS](https://medium.com/p/cdd3ddf67404/edit), [Kubernetes](https://github.com/FariusGitHub/K8S_K9S_K3S), [Docker](https://medium.com/p/e457b92f0821/edit), Produce, Robotic, IoT. </br>
 In few words, it shows how agile works in term of reliability and efficiency. </br>
 
 ## LINKS
