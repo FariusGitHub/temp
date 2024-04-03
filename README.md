@@ -74,7 +74,6 @@ which means it can be an expressive and flexible tool and it is ideal choice for
 Example (usually within sh command)
 docker run ev3
 ```
-What is interesting in CI/CD is the continuous integration and deployment of changes into the production environment. In this case, the pipeline will typically refer to the latest Dockerfile. Whenever there is a change, it will be applied, documented in the GitHub repository using Groovy syntax, and saved as an updated Dockerfile.</br></br>
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image40.png)</br>
 ```txt
 Declarative Pipeline: Presents a more simplified and opinionated syntax. It must be enclosed with a pipeline block
@@ -84,10 +83,11 @@ Example
 docker.image(ev3).run
 ```
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image41.png)</br>
-What is also interesting about this project is the coexistence of distributed computing from Raspberry Pi and a robotic arm with its own system. There is a limit to what Jenkinfiles can leverage, and some improvements may need to be made outside of Jenkinfiles. In this case, a voice spectrum is used to differentiate between two scenarios by changing the beep from 100 to 500. Although changes made here do not affect the Dockerfile, they do impact the Robotic Arm PyBrick MicroPython system, not the Raspberry Pi.</br></br>
+What is interesting in CI/CD is the continuous integration and deployment of changes into the production environment. In this case, the pipeline will typically refer to the latest Dockerfile. Whenever there is a change, it will be applied, documented in the GitHub repository using Groovy syntax, and saved as an updated Dockerfile.</br></br>
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image42.png)</br>
-As we covered a bit about observability in the beginning of this blog, here is how Prometheus and Grafana work together through Helm to visualize various metrics such as CPU usage, memory allocation, networking, and more.</br></br>
+What is also interesting about this project is the coexistence of distributed computing from Raspberry Pi and a robotic arm with its own system. There is a limit to what Jenkinfiles can leverage, and some improvements may need to be made outside of Jenkinfiles. In this case, a voice spectrum is used to differentiate between two scenarios by changing the beep from 100 to 500. Although changes made here do not affect the Dockerfile, they do impact the Robotic Arm PyBrick MicroPython system, not the Raspberry Pi.</br></br>
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image43.png)</br></br>
+As we covered a bit about observability in the beginning of this blog, here is how Prometheus and Grafana work together through Helm to visualize various metrics such as CPU usage, memory allocation, networking, and more.</br></br>
 
 # SUMMARY
 This blog cover an application of Raspberry Pi and DevOps application, </br>
