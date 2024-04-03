@@ -95,10 +95,10 @@ It is actually more than AWS, Kubernetes, Docker, Produce, Robotic, IoT. </br>
 In few words, it shows how agile works in term of reliability and efficiency. </br>
 
 # LINKS
-Herewith is the youtube about Pi - Peach Cutter </br>
+Below is a link to above blog in youtube format.</br>
 https://www.youtube.com/watch?v=23Wq8__pd8s </br>
 
-Below is a link to above blog in presentation format.</br> 
+Below is a link to above blog in pdf/ppt format.</br> 
 https://drive.google.com/file/d/1-pUiTDBRnkanjGYIGqD4miXVh1JM1Nji/view?usp=drivesdk</br>
 
 # CREDITS
