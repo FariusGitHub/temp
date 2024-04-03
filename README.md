@@ -52,7 +52,7 @@ There are emerging languages like [Golang](https://github.com/FariusGitHub/crd) 
 There are also load balancing and [autoscaling](https://medium.com/p/c340ddde64de/edit), and horizontal pod autoscaling which every DevOps engineer should become familiar with. </br> 
 How do all of this apply to slicing a tiny peach? </br>
 Well, the fun part is the materials for this experiment are abundant and relatively cheaper compared to those woods and metals every carpenter or machinist learns to do their job. </br>
-Kaizen is famously known as [continuous improvement]([https://en.wikipedia.org/wiki/DevOps](https://en.wikipedia.org/wiki/DevOps#Toyota_production_system,_lean_thinking,_kaizen)), and in DevOps, it is all about it.</br></br>
+Kaizen is famously known as [continuous improvement](https://en.wikipedia.org/wiki/DevOps#Toyota_production_system,_lean_thinking,_kaizen), and in DevOps, it is all about it.</br></br>
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image34.png)</br>
 Why did I choose a Lego toy for this project and how does it work in terms of slicing peach fruit? </br> 
 The good news is that since EV3 was introduced in 2013, it may take seven years for this affordable platform to become as popular as [Python](https://github.com/FariusGitHub/temp/tree/main/code) and [Raspberry Pi](https://www.ev3dev.org/). </br>
