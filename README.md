@@ -4,6 +4,9 @@ https://github.com/FariusGitHub/temp
 I would like to introduce an application of Raspberry Pi instances to move a robotic arm in order to slice a variety of produce using the fundamentals of DevOps.</br></br>
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image26.png)</br>
 The majority of this blog will cover Infrastructure as Code, Container Technologies, and Continuous Delivery.</br></br>
+
+## DevOps Fundamentals
+
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image27.png)</br>
 In short, DevOps involves applying principles and practices such as using [Linux OS](https://github.com/FariusGitHub/temp/blob/main/code/01_DevOps_Fundamentals_Linux_OS.md), [Git](https://github.com/FariusGitHub/temp/blob/main/code/02_DevOps_Fundamentals_Git_GitHub.md), and Architectural Diagrams. </br>
 For this capstone project, we will be using a simple application involving Raspberry Pi and Lego EV3 robotics to automate the slicing of produce while implementing DevOps practices.</br></br>
@@ -11,6 +14,9 @@ For this capstone project, we will be using a simple application involving Raspb
 Unlike on-premises computers, cloud computing platforms like [AWS EC2](https://github.com/FariusGitHub/temp/blob/main/code/03_Terraform_VPC_EC2.md#example-of-ec2-with-ansible) and [Azure Virtual Machine](https://github.com/FariusGitHub/temp/blob/main/code/03_Terraform_VPC_EC2.md#example-of-azure-vm-setup-with-terraform) require more resources to set up beforehand. <br>
 I have been exploring [bash](https://medium.com/p/23f568a31353/edit), Terraform, Ansible, and [Chef](https://github.com/FariusGitHub/chef-ec2) to automate the deployment of EC2 and Azure Virtual Machine instances. </br>
 In this project, we will create an instance that will store a master plan to move the robotic arm to slice peach fruit at the master node.</br></br>
+
+## Infrastructure as a Code
+
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image29.png)</br>
 The next thing we can automate in terms of [infrastructure](https://github.com/FariusGitHub/temp/blob/main/code/06_Terraform_Jenkins.md) is [Jenkins](https://github.com/FariusGitHub/temp/blob/main/code/11a_CICD_jenkins_console_output.md) Continuous Integration and Continuous Deployment, also known as Continuous Delivery. </br>
 While it is easier to set up CI/CD with a web UI, there is a Java tool called jenkins-cli.jar that can automate this process. </br>
@@ -33,6 +39,9 @@ An example shown in the slide demonstrates sending interactive commands to the E
 Lastly, in terms of infrastructure as code, we can also apply the same principles to the [observability](https://github.com/FariusGitHub/temp/blob/main/code/07_Terraform_Grafana.md) aspect, which is mainly managed by Prometheus and Grafana when Docker and Kubernetes are utilized. </br>
 Typically, we use Helm as a package manager to deploy Prometheus and Grafana for monitoring purposes.</br>
 We will dive deeper into observability towards the end of this blog.</br></br>
+
+## Container Technologies
+
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image33.png)</br>
 The next section of this blog will cover the heart of the DevOps principles itself, Container Technology. </br>
 In short, many will think DevOps is identical to Docker and Kubernetes as container and container orchestration. </br>
@@ -62,6 +71,9 @@ Typically, we tag the image, push it to Docker Hub, and then pull it back to tes
 The last part of the container technologies discussion here will focus on orchestrating the containers themselves. </br>
 Kubernetes is the most popular platform and offers tracking features such as [ingress](https://github.com/FariusGitHub/temp/blob/main/code/ingress.yaml), load balancer, services, and [deployment](https://github.com/FariusGitHub/temp/blob/main/code/deployment.yaml). </br>
 We can switch the service based on host-based routing and typically use [load balancing within a Kubernetes service](https://github.com/FariusGitHub/temp/blob/main/code/LoadBalancerService.yaml) to connect to deployed pods that are similar.</br></br>
+
+## CI/CD
+
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image38.png)</br>
 The next part of this blog focuses on [CI/CD](https://github.com/FariusGitHub/temp/blob/main/code/11_CICD_setup.md). We use Jenkins here, although GitHub Actions is also growing in popularity. </br>
 In the beginning of this blog, I introduced automation with jenkins-cli.jar. Now, we will delve deeper into the user-friendly Web UI. </br>
@@ -86,21 +98,24 @@ docker.image(ev3).run
 What is interesting in CI/CD is the continuous integration and deployment of changes into the production environment. In this case, the pipeline will typically refer to the latest Dockerfile. Whenever there is a change, it will be applied, documented in the GitHub repository using Groovy syntax, and saved as an updated Dockerfile.</br></br>
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image42.png)</br>
 What is also interesting about this project is the coexistence of distributed computing from Raspberry Pi and a robotic arm with its own system. There is a limit to what Jenkinfiles can [leverage](https://github.com/FariusGitHub/temp/blob/main/code/leverage.md), and some improvements may need to be made outside of Jenkinfiles. In this case, a voice spectrum is used to differentiate between two scenarios by changing the beep from 100 to 500. Although changes made here do not affect the Dockerfile, they do impact the Robotic Arm PyBrick MicroPython system, not the Raspberry Pi.</br></br>
+
+## Observability
+
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image43.png)</br></br>
 As we covered a bit about observability in the beginning of this blog, here is how Prometheus and Grafana work together through Helm to visualize various metrics such as CPU usage, memory allocation, networking, and more.</br></br>
 
-# SUMMARY
+## SUMMARY
 This blog cover an application of Raspberry Pi and DevOps application, </br>
 It is actually more than AWS, Kubernetes, Docker, Produce, Robotic, IoT. </br>
 In few words, it shows how agile works in term of reliability and efficiency. </br>
 
-# LINKS
+## LINKS
 Below is a link to above blog in youtube format.</br>
 https://www.youtube.com/watch?v=23Wq8__pd8s </br>
 
 Below is a link to above blog in pdf/ppt format.</br> 
 https://drive.google.com/file/d/1-pUiTDBRnkanjGYIGqD4miXVh1JM1Nji/view?usp=drivesdk</br>
 
-# CREDITS
+## CREDITS
 </br>Thank you to my mentors, motivators from Toronto, Mississauga, Montreal.</br>
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image24.png)
