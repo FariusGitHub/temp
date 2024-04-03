@@ -28,7 +28,7 @@ For this capstone project, we will focus only on the 3D movement of the robotic 
 The main focus of this project is on storing numerous coordinates that will instruct the Raspberry Pi and Robotic Arm where and when to move. </br>
 This data could be extensive considering the 3D coordinates and intensity of pressure required for slicing. </br>
 Installing and running mySQL only requires a few lines of commands, along with testing the connection. </br>
-The main work in the database attached to the master node will involve schema design, data mapping, and ETL using query language and entity relationship diagrams.</br></br>
+The main work in the database attached to the master node will involve schema design, data mapping, and [ETL](https://medium.com/p/b48908474a4b/edit) using [query language](https://medium.com/p/6834334db362/edit) and entity relationship diagrams.</br></br>
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image31.png)</br>
 The next automation we could implement in terms of infrastructure as code is related to the robotic arm system. </br>
 The [EV3 brick](https://education.lego.com/en-us/product-resources/mindstorms-ev3/teacher-resources/python-for-ev3/), which connects the Raspberry Pi to the motor movement, runs on a lightweight version of Linux. </br>
