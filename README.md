@@ -115,7 +115,3 @@ https://www.youtube.com/watch?v=23Wq8__pd8s </br>
 
 Below is a link to above blog in pdf/ppt format.</br> 
 https://drive.google.com/file/d/1-pUiTDBRnkanjGYIGqD4miXVh1JM1Nji/view?usp=drivesdk</br>
-
-## CREDITS
-</br>Thank you to my mentors, motivators from Toronto, Mississauga, Montreal.</br>
-![](https://github.com/FariusGitHub/temp/blob/main/image/image24.png)
