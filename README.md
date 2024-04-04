@@ -113,5 +113,5 @@ In few words, it shows how agile works in term of reliability and efficiency. </
 Below is a link to above blog in youtube format.</br>
 https://www.youtube.com/watch?v=23Wq8__pd8s </br>
 
-Below is a link to above blog in pdf/ppt format.</br> 
+and below is the link in a presentation format.</br> 
 https://drive.google.com/file/d/1-pUiTDBRnkanjGYIGqD4miXVh1JM1Nji/view?usp=drivesdk</br>
