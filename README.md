@@ -12,7 +12,7 @@ In short, DevOps involves applying principles and practices such as using [Linux
 For this capstone project, we will be using a simple application involving Raspberry Pi and Lego EV3 robotics to automate the slicing of produce while implementing DevOps practices.</br></br>
 ![](https://github.com/FariusGitHub/temp/blob/main/image/image28.png)</br>
 Unlike on-premises computers, cloud computing platforms like [AWS EC2](https://github.com/FariusGitHub/temp/blob/main/code/03_Terraform_VPC_EC2.md#example-of-ec2-with-ansible) and [Azure Virtual Machine](https://github.com/FariusGitHub/temp/blob/main/code/03_Terraform_VPC_EC2.md#example-of-azure-vm-setup-with-terraform) require more resources to set up beforehand. <br>
-I have been exploring [bash](https://medium.com/p/23f568a31353/edit), Terraform, Ansible, and [Chef](https://github.com/FariusGitHub/chef-ec2) to automate the deployment of EC2 and Azure Virtual Machine instances. </br>
+I have been exploring [bash](https://medium.com/p/23f568a31353/edit), [Terraform](https://medium.com/p/5fa7625e21be/edit), [Ansible](https://medium.com/p/7bffc4edf285/edit), and [Chef](https://github.com/FariusGitHub/chef-ec2) to automate the deployment of EC2 and Azure Virtual Machine instances. </br>
 In this project, we will create an instance that will store a master plan to move the robotic arm to slice peach fruit at the master node.</br></br>
 
 ## Infrastructure as a Code
